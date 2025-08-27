@@ -13,7 +13,7 @@ public class kadanes {
         return max_sum;
     }
     public static void main(String[] args) {
-        int arr[]={-2,-3,4,-1,-2,1,5,-3};
+        int arr[]={-2,-5,6,-2,-3,1,5,-6};
         System.out.println(sub_sum(arr));
     }
 }
