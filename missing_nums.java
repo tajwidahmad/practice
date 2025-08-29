@@ -1,37 +1,37 @@
-import java.util.*;
+import java.util.Arrays;
+
 public class missing_nums {
+
     public static void main(String[] args) {
-        int arr[]= new int[5];
-        Scanner sc = new Scanner (System.in);
-        System.out.print("enter the elements of the array one by one: ");
-        for(int i=0;i<arr.length;i++){
-             arr[i]=sc.nextInt();
-        }
-        System.out.print("enter the key you want to search: ");
-        int key=sc.nextInt(); 
-        // System.out.println(l_serach(arr, key));   
-        // System.out.println(largest(arr)); 
+        int arr[]={2,4,3,5,7};
+        int key = 5;
+        System.out.println(bin_s(arr, key));
+
     }
-    public static int l_serach(int  arr[], int key) {
-        for(int i=0;i<arr.length;i++){
-            if (arr[i]==key) {
-                System.out.print("the key is present in the array at an index: ");
-                return i; 
+    public static int bin_s(int arr[],int key) {
+        Arrays.sort(arr);
+        int start=0;
+        int end=arr.length-1;
+       
+        while(start<=end){
+             int mid=(start+end)/2;
+            // if key==mid
+            if (key==arr[mid]) {
+                return mid;
+                
+            }
+            else if(key>arr[mid]){
+                start=mid+1;
+
+            }
+            else{
+            end=mid-1;
+            start++;
+            end--;
             }
         }
         return -1;
+
         
     }
-    public static int largest(int arr[]) {
-        int largest=Integer.MIN_VALUE;
-        for(int i=0;i<arr.length;i++){
-            if (arr[i]>largest) {
-                largest=arr[i];
-                
-            }
-        }
-        return largest;
-        
-    }
-    
 }
