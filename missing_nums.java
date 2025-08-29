@@ -1,36 +1,20 @@
-import java.util.Arrays;
-
 public class missing_nums {
 
     public static void main(String[] args) {
-        int arr[]={2,4,3,5,7};
-        int key = 5;
-        System.out.println(bin_s(arr, key));
-
+        int arr[]={1,2,3,4,5,6};
+        pairs(arr);
+        
     }
-    public static int bin_s(int arr[],int key) {
-        Arrays.sort(arr);
-        int start=0;
-        int end=arr.length-1;
-       
-        while(start<=end){
-             int mid=(start+end)/2;
-            // if key==mid
-            if (key==arr[mid]) {
-                return mid;
-                
+    public static void pairs(int arr[]) {
+        for(int i=0;i<arr.length;i++){
+            int start=arr[i];
+            for(int j=i+1;j<arr.length;j++){
+                System.out.print("("+start+","+arr[j]+")");
             }
-            else if(key>arr[mid]){
-                start=mid+1;
-
-            }
-            else{
-            end=mid-1;
-            start++;
-            end--;
-            }
+            System.out.println();
         }
-        return -1;
+        
+
 
         
     }
