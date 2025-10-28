@@ -1,4 +1,5 @@
 public class String_compress {
+    // compress 
 
     public static void main(String[] args) {
         String str ="aaabbcccdd";
